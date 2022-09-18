@@ -1,0 +1,22 @@
+@model List<Avaliacao3BimLp3.ViewModels.LojaViewModel>;
+
+@{
+    ViewData["Title"] = "Área administrativa";
+}
+
+<h1 class="mb-3 text-center">Lojas</h1>
+
+@foreach(var loja in Model)
+{
+    @* <a href="/Home/Show/@loja.Id">
+        <h3>@loja.Nome</h3>
+    </a> *@
+
+    <h3>@loja.Nome</h3>
+    <p>@loja.Piso</p>
+    <p>@loja.TipoDeEstabelecimento</p>
+    <a class="btn btn-primary btn-block" role="button" asp-action="Show" asp-route-id="@loja.Id">Detalhes</a>
+    <a class="btn btn-danger btn-block" role="button" asp-action="Apagar" asp-route-id="@loja.Id">Deletar</a>
+    <hr>
+   
+}

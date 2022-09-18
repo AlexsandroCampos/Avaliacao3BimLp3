@@ -8,11 +8,10 @@
 
 @foreach(var loja in Model)
 {
-    <a href="/Home/Show/@loja.Id">
-        <h3>@loja.Nome</h3>
-    </a>
+    <h3>@loja.Nome</h3>
     <p>@loja.Piso</p>
+    <p>@loja.Descricao</p>
     <p>@loja.TipoDeEstabelecimento</p>
+    <p>@loja.Email</p>
     <hr>
-   
 }

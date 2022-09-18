@@ -12,6 +12,6 @@ public class HomeController : Controller
     };
 
     public IActionResult Index() => View(lojas);
-
+    public IActionResult IndexAdmin() => View(lojas);
     public IActionResult Show(int id) => View(lojas.Find(l => l.Id == id));
 }
