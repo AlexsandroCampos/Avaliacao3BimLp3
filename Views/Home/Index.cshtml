@@ -8,18 +8,11 @@
 
 @foreach(var loja in Model)
 {
-    <a href="/Estudante/Show/@loja.Id">
+    <a href="/Home/Show/@loja.Id">
         <h3>@loja.Nome</h3>
     </a>
     <p>@loja.Piso</p>
-    @if(loja.Kiosque)
-    {
-        <p>Kiosque</p>
-    }
-
-    else {
-        <p>Loja</p>
-    }
+    <p>@loja.TipoDeEstabelecimento</p>
     <hr>
    
 }

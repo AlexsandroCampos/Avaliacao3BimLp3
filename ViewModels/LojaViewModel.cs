@@ -1,4 +1,5 @@
 namespace Avaliacao3BimLp3.ViewModels;
+using Avaliacao3BimLp3.Enums;
 
 public class LojaViewModel
 {
@@ -6,16 +7,16 @@ public class LojaViewModel
     public string Nome { get; set; }
     public string Piso { get; set; }
     public string Descricao { get; set; }
-    public bool Kiosque { get; set; }
+    public LojaEnum TipoDeEstabelecimento { get; set; }
     public string Email { get; set; }
 
-    public LojaViewModel(int id, string nome, string piso, string descricao, bool kiosque, string email)
+    public LojaViewModel(int id, string nome, string piso, string descricao, LojaEnum tipoDeEstabelecimento, string email)
     {
         Id = id;
         Nome = nome;
         Piso = piso;
         Descricao = descricao;
-        Kiosque = kiosque;
+        TipoDeEstabelecimento = tipoDeEstabelecimento;
         Email = email;
     }
 }
