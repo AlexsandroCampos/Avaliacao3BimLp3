@@ -1,8 +1,25 @@
-﻿@{
+﻿@model List<Avaliacao3BimLp3.ViewModels.LojaViewModel>;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1 class="mb-3">Lojas</h1>
+
+@foreach(var loja in Model)
+{
+    <a href="/Estudante/Show/@loja.Id">
+        <h3>@loja.Nome</h3>
+    </a>
+    <p>@loja.Piso</p>
+    @if(loja.Kiosque)
+    {
+        <p>Kiosque</p>
+    }
+
+    else {
+        <p>Loja</p>
+    }
+    <hr>
+   
+}
