@@ -1,31 +1,18 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Avaliacao3BimLp3.Models;
+using Avaliacao3BimLp3.ViewModels;
 
 namespace Avaliacao3BimLp3.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private static List<LojaViewModel> lojas = new List<LojaViewModel>{
+        new LojaViewModel(1, "piso 3", "Tênis Brasil", "Aqui você encontra os tênis", false, "tenis@email.com"),
+        new LojaViewModel(2, "piso 5", "Lembranças Já", "Venha comprar sua lembrança", true, "lemb@email.com"),
+    };
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    public IActionResult Index() => View();
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+    public IActionResult Privacy() => View();
 }
