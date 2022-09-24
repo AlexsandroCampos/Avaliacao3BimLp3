@@ -1,0 +1,24 @@
+@model List<Avaliacao3BimLp3.ViewModels.EstabelecimentoViewModel>;
+
+@{
+    ViewData["Title"] = "Área administrativa";
+}
+
+<h1 class="mb-3 text-center">Estabelecimentos</h1>
+
+@if(Model.Count == 0)
+{
+    <p class="text-center mt-2 mb-0">Nenhum estabelecimento cadastrado</p>
+    <p class="text-center pd-0">Cadastre algum clicando <a asp-area="" asp-controller="Home" asp-action="AdminCreate">aqui</a></p>
+}
+
+@foreach(var estabelecimento in Model)
+{
+    <h3>@estabelecimento.Nome</h3>
+    <p>@estabelecimento.Piso</p>
+    <p>@estabelecimento.TipoDeEstabelecimento</p>
+    <a class="btn btn-primary btn-block" role="button" asp-action="AdminShow" asp-route-id="@estabelecimento.Id">Detalhes</a>
+    <a class="btn btn-danger btn-block" role="button" asp-action="AdminDelete" asp-route-id="@estabelecimento.Id">Deletar</a>
+    <hr>
+   
+}

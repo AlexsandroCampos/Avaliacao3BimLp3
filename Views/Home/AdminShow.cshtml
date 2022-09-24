@@ -13,4 +13,5 @@
 <p>Descrição: @Model.Descricao</p>
 <p>Tipo de estabelecimento: @Model.TipoDeEstabelecimento</p>
 <p>Endereço: @Model.Email</p>
-<a class="btn btn-danger btn-block" role="button" asp-action="Delete" asp-route-id="@Model.Id">Deletar</a>
+<a class="btn btn-primary btn-block" role="button" asp-action="AdminIndex">Ir para lista</a>
+<a class="btn btn-danger btn-block" role="button" asp-action="AdminDelete" asp-route-id="@Model.Id">Deletar</a>

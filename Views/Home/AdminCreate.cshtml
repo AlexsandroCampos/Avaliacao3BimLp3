@@ -5,10 +5,10 @@
 
 <h1 class="mb-3 text-center">Cadastrar estabelecimento</h1>
 
-<form asp-action="Create" method="post" class="w-25 m-auto">
+<form asp-action="AdminCreate" method="post" class="w-25 m-auto">
     <div class="mb-4">
         <label for="Nome">Nome</label><br>
-        <input type="text" asp-for="Nome" class="w-100">
+        <input type="text" asp-for="Nome" class="w-100" required>
         @if(ViewBag.MensagemErro != null) {
             <p style="color: red;">@ViewBag.MensagemErro</p>
         }
@@ -16,19 +16,21 @@
     
 
     <div class="mb-4">
+        <label for="Piso" class="form-label">Piso</label>
         <select asp-for="Piso" class="w-100" style="padding: 2px 1px;">
-            <option value="piso 1">piso 1</option>
-            <option value="piso 2">piso 2</option>
-            <option value="piso 3">piso 3</option>
+            <option value="Piso 1">Piso 1</option>
+            <option value="Piso 2">Piso 2</option>
+            <option value="Piso 3">Piso 3</option>
         </select>
     </div>
 
     <div class="mb-4">
         <label for="Descricao">Descrição</label><br>
-        <input type="text" asp-for="Descricao" class="w-100">
+        <input type="text" asp-for="Descricao" class="w-100" required>
     </div>
 
     <div class="mb-4">
+        <label for="TipoDeEstabelecimento" class="form-label">Tipo de estabelecimento</label>
         <select asp-for="TipoDeEstabelecimento" class="w-100" style="padding: 2px 1px;">
             <option value="Loja">Loja</option>
             <option value="Kiosque">Kiosque</option>
@@ -37,7 +39,7 @@
 
     <div class="mb-4">
         <label for="Email">Email</label><br>
-        <input type="email" asp-for="Email" class="w-100">
+        <input type="email" asp-for="Email" class="w-100" required>
     </div>
 
     <input type="submit" value="Enviar">

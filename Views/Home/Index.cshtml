@@ -4,14 +4,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1 class="mb-3">Lojas</h1>
+<h1 class="mb-3 text-center">Estabelecimentos</h1>
 
-@foreach(var loja in Model)
+@if(Model.Count == 0)
 {
-    <h3>@loja.Nome</h3>
-    <p>@loja.Piso</p>
-    <p>@loja.Descricao</p>
-    <p>@loja.TipoDeEstabelecimento</p>
-    <p>@loja.Email</p>
+    <p class="text-center mt-2">Nenhum estabelecimento cadastrado</p>    
+}
+
+@foreach(var estabelecimento in Model)
+{
+    <h3>@estabelecimento.Nome</h3>
+    <p>@estabelecimento.Piso</p>
+    <p>@estabelecimento.Descricao</p>
+    <p>@estabelecimento.TipoDeEstabelecimento</p>
+    <p>@estabelecimento.Email</p>
     <hr>
 }
